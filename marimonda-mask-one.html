@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+    <title>Marimonda</title>
+    <head>
+        <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+
+        }
+        .marimonda-wrap {
+            width: 100vw;
+            height: 100vh;
+            background-color: #FC2318;
+            display: flex;
+            align-items: center;
+        }
+
+        .mari-face {
+            width: 60%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px 100px 0px 0px;
+            flex-wrap: wrap;
+
+        }
+
+        .mari-lear, .mari-rear {
+            width: 20%; 
+            height: 80%;
+            background-color: #E4D50D;
+        }
+
+        .mari-lear {
+            border-radius: 100px 0px 0px 100px;
+        }
+
+        .mari-rear {
+            border-radius: 0px 100px 100px 0px;
+        }
+
+        .mari-eyes {
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .mari-leye, .mari-reye, .mari-mouth {
+            height: 20vh;
+            width: 20vw;
+            background-color:black;
+            border-radius: 200px;
+            border: 75px solid #FC2318;
+        }
+
+        .mari-nose {
+            width: 10%; 
+            height: 80vh;
+            background-color: #CCDE11;
+            border-radius: 100px;
+            position: absolute;
+            z-index: 2;
+        }
+        
+        </style>
+        <script src="anime.min.js"></script>
+    </head>
+    <body>
+        <div class="marimonda-wrap">
+            <div class="mari-lear"></div>
+            <div class="mari-face">
+                <div class="mari-eyes">
+                    <div class="mari-leye"></div>
+                    <div class="mari-reye"></div>
+                </div>
+                <div class="mari-nose"></div>
+                <div class="mari-mouth"></div>
+            </div>
+            <div class="mari-rear"></div>
+        </div>
+    </body>
+    <script>
+        anime({
+  targets: '.mari-eyes, .mari-mouth, .mari-nose', 
+  keyframes: [
+    {translateX: 100},
+    {translateX: -100},
+    {translateX: 0}
+  ],
+  direction: 'alternate', 
+  delay: 800,
+  delay: anime.stagger(100),
+  loop: true,
+  easing: 'easeOutElastic(1, .8)'
+
+});
+    </script>
+</html>
